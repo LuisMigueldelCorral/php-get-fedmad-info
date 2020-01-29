@@ -2,7 +2,7 @@
 
 function file_get_contents_utf8($fn) { 
 	 $content = file_get_contents($fn); 
-	  return $content
+	 return $content;
 }
 
 // Crear un flujo
