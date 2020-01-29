@@ -1,6 +1,15 @@
 <?php
+// Crear un flujo
+$opciones = array(
+  'http'=>array(
+    'method'=>"GET",
+    'header'=>"Accept-language: en\r\n" .
+              "Cookie: foo=bar\r\n"
+  )
+);
 
- $content = file_get_contents("http://www.fedmadtm.com"); 
- echo $content;
+$contexto = stream_context_create($opciones);
 
+// Abre el fichero usando las cabeceras HTTP establecidas arriba
+$fichero = file_get_contents('http://www.example.com/', false, $contexto);
 ?>
