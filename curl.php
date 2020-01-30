@@ -21,7 +21,7 @@ echo $output;
 
 echo "<p>Poster</p>" . poster($url);
 
-function poster($url,$fields_string){
+function poster($url){
 	$ua = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.A.B.C Safari/525.13';
 	$ch = curl_init();
 	curl_setopt($ch,CURLOPT_URL, $url);
@@ -36,7 +36,6 @@ function poster($url,$fields_string){
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 	curl_setopt($ch, CURLOPT_MAXREDIRS, 20);
 	curl_setopt($ch,CURLOPT_POST, true);
-	//curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
 
 	$result = curl_exec($ch);
 	$last = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
