@@ -1,10 +1,10 @@
 <?php
 
-$url = 'http://www.example.com';
+//$url = 'http://www.example.com';
 
 $url = 'http://www.fedmadtm.com';
 
-$url = 'http://www.rfetm.es';
+//$url = 'http://www.rfetm.es';
 
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_HEADER, true);    // we want headers
@@ -15,6 +15,8 @@ $output = curl_exec($ch);
 $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
 
-echo 'HTTP code: ' . $httpcode;
+echo '<p>HTTP code: ' . $httpcode . '</p>';
+
+echo $output
 
 ?>
