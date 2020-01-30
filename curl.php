@@ -19,7 +19,7 @@ echo '<p>HTTP code: ' . $httpcode . '</p>';
 
 echo $output;
 
-echo "<p>Poster</p>" . poster($url);
+echo "<p>Poster</p>" . poster($url)[0]."<p>Otro...</p>" . poster($url)[1];
 
 function poster($url){
 	$ua = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.A.B.C Safari/525.13';
