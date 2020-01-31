@@ -33,10 +33,10 @@ $opciones = array(
 $contexto = stream_context_create($opciones);
 
 // Abre el fichero usando las cabeceras HTTP establecidas arriba
-$fichero = curl_get_contents('http://www.rfetm.es/', false, $contexto);
-$fichero = explode('<div id="slider" class="nivoSlider">',$fichero)[1]; 
-$fichero = explode('</td></tr></table>',$fichero)[0]; 
-$fichero = '<div id="slider" class="nivoSlider">' . $fichero;
+$fichero = curl_get_contents('http://www.rfetm.es/categoria.php?id_categoria=1#', false, $contexto);
+$fichero = explode('<td colspan="3" valign="top" align="CENTER">',$fichero)[1]; 
+$fichero = explode('<hr style="color:#d52e3f;height:2px">',$fichero)[0]; 
+$fichero = '<h3>Noticias RFETM</h3>' . $fichero;
 echo $fichero;
 
 ?>
