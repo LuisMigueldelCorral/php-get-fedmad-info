@@ -11,7 +11,25 @@
     .categoria{
       color: #069;
     }
-
+    * {
+        font-size: initial;
+    }
+    hr{
+      color: #069 !important;
+      background-color: #069 !important;
+      height: 5px !important;
+    }
+    h3{
+      padding:  20px;
+      border-bottom: 5px solid #069;
+    }
+    a{
+        color: #069;
+    }
+    .centrado{
+      text-align: center;
+      margin: 0 auto; 
+    }
   </style>
 </head>
 
@@ -51,8 +69,7 @@ $fichero = str_replace("news/", "http://www.rfetm.es/news/", $fichero);
 $fichero = str_replace('href="', 'href="http://www.rfetm.es/news/', $fichero);
 $fichero = str_replace("href='", "href='http://www.rfetm.es/news/", $fichero);
 
-
-$fichero = '<hr/><h3>Noticias RFETM</h3>' . $fichero;
+$fichero = '<h3 class="centrado">Noticias RFETM</h3>' . $fichero;
 $fichero = utf8_encode($fichero);
 echo $fichero;
 
