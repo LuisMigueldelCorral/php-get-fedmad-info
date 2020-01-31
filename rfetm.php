@@ -6,6 +6,13 @@
   <META HTTP-EQUIV="Cache-Control" content="no-cache">
   <META HTTP-EQUIV="Pragma" content="no-cache">
   <title>Noticias RFETM</title>
+  <style type="text/css">
+    
+    .categoria{
+      color: #069;
+    }
+
+  </style>
 </head>
 
 <body>
@@ -42,6 +49,7 @@ $fichero = explode("<hr style='color:#d52e3f;height:2px'><p align='center'>",$fi
 $fichero = explode('<td width="30%" valign="top" align="center" bgcolor="#eeeeee">',$fichero)[0]; 
 $fichero = str_replace("news/", "http://www.rfetm.es/news/", $fichero);
 $fichero = str_replace('href="', 'href="http://www.rfetm.es/news/', $fichero);
+$fichero = str_replace("href='", "href='http://www.rfetm.es/news/", $fichero);
 
 
 $fichero = '<hr/><h3>Noticias RFETM</h3>' . $fichero;
