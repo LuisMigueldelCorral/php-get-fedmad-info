@@ -34,11 +34,8 @@ $contexto = stream_context_create($opciones);
 
 // Abre el fichero usando las cabeceras HTTP establecidas arriba
 $fichero = curl_get_contents('http://www.rfetm.es/categoria.php?id_categoria=1#', false, $contexto);
-
-echo $fichero;
-
 $fichero = explode("<td colspan='3' valign='top' ALIGN='CENTER'>",$fichero)[1]; 
-$fichero = explode("<hr style='color:#d52e3f;height:2px'>",$fichero)[0]; 
+$fichero = explode("<hr style='color:#d52e3f;height:2px'><p align='center'>",$fichero)[0]; 
 $fichero = '<hr/><h3>Noticias RFETM</h3>' . $fichero;
 echo $fichero;
 
