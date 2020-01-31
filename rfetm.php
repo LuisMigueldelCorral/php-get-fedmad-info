@@ -41,6 +41,9 @@ $fichero = explode("<td colspan='3' valign='top' ALIGN='CENTER'>",$fichero)[1];
 $fichero = explode("<hr style='color:#d52e3f;height:2px'><p align='center'>",$fichero)[0]; 
 $fichero = explode('<td width="30%" valign="top" align="center" bgcolor="#eeeeee">',$fichero)[0]; 
 $fichero = str_replace("news/", "http://www.rfetm.es/news/", $fichero);
+$fichero = str_replace('href="', 'href="http://www.rfetm.es/news/', $fichero);
+
+
 $fichero = '<hr/><h3>Noticias RFETM</h3>' . $fichero;
 echo $fichero;
 
