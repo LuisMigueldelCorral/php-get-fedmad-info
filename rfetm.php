@@ -30,6 +30,16 @@
       text-align: center;
       margin: 0 auto; 
     }
+
+    html{
+      background-color: #dbe3e8;
+    }
+    img{
+      margin: 20px;
+      border: 2px double #eee;
+      padding: 5px;      
+    }
+
   </style>
 </head>
 
