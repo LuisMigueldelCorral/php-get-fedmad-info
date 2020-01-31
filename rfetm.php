@@ -53,7 +53,7 @@ $fichero = str_replace("href='", "href='http://www.rfetm.es/news/", $fichero);
 
 
 $fichero = '<hr/><h3>Noticias RFETM</h3>' . $fichero;
-$fichero = utf8_decode($fichero);
+$fichero = utf8_encode($fichero);
 echo $fichero;
 
 
