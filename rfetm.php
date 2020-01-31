@@ -1,8 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Noticias RFETM</title>
+  <meta http-equiv="Content-Language" content="es">
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <META HTTP-EQUIV="Cache-Control" content="no-cache">
+  <META HTTP-EQUIV="Pragma" content="no-cache">
+  <title>Noticias RFETM</title>
 </head>
 
 <body>
@@ -36,6 +39,7 @@ $contexto = stream_context_create($opciones);
 $fichero = curl_get_contents('http://www.rfetm.es/categoria.php?id_categoria=1#', false, $contexto);
 $fichero = explode("<td colspan='3' valign='top' ALIGN='CENTER'>",$fichero)[1]; 
 $fichero = explode("<hr style='color:#d52e3f;height:2px'><p align='center'>",$fichero)[0]; 
+$fichero = explode("<td width="30%" valign="top" align="center" bgcolor="#eeeeee">",$fichero)[0]; 
 $fichero = '<hr/><h3>Noticias RFETM</h3>' . $fichero;
 echo $fichero;
 
