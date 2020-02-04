@@ -71,6 +71,8 @@ $opciones = array(
 $contexto = stream_context_create($opciones);
 
 // Abre el fichero usando las cabeceras HTTP establecidas arriba
+/*
+// ESTA PARTE FUNCIONA ES PARA NO SOBRECARGAR EL SERVIDOR
 $fichero = curl_get_contents('http://www.rfetm.es/categoria.php?id_categoria=1#', false, $contexto);
 $fichero = explode("<td colspan='3' valign='top' ALIGN='CENTER'>",$fichero)[1]; 
 $fichero = explode("<hr style='color:#d52e3f;height:2px'><p align='center'>",$fichero)[0]; 
@@ -82,7 +84,12 @@ $fichero = str_replace("href='", "href='http://www.rfetm.es/news/", $fichero);
 $fichero = '<h3 class="centrado">Noticias RFETM</h3>' . $fichero;
 $fichero = utf8_encode($fichero);
 echo $fichero;
+*/
 
+$timestamp = curl_getinfo($fichero, CURLINFO_FILETIME);
+if ($timestamp != -1) { //otherwise unknown
+    echo date("Y-m-d H:i:s", $timestamp); //etc
+} 
 
 ?>
 
