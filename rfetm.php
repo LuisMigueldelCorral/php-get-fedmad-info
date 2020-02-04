@@ -47,6 +47,10 @@
 
 <?php
 
+$url = "http://www.rfetm.es/categoria.php?id_categoria=1#";
+
+/*
+// ESTA PARTE FUNCIONA ES PARA NO SOBRECARGAR EL SERVIDOR
 function curl_get_contents($url)
 {
    $ch = curl_init();
@@ -69,10 +73,9 @@ $opciones = array(
 );
 
 $contexto = stream_context_create($opciones);
-$url = "http://www.rfetm.es/categoria.php?id_categoria=1#";
+
 // Abre el fichero usando las cabeceras HTTP establecidas arriba
-/*
-// ESTA PARTE FUNCIONA ES PARA NO SOBRECARGAR EL SERVIDOR
+
 $fichero = curl_get_contents($url, false, $contexto);
 $fichero = explode("<td colspan='3' valign='top' ALIGN='CENTER'>",$fichero)[1]; 
 $fichero = explode("<hr style='color:#d52e3f;height:2px'><p align='center'>",$fichero)[0]; 
@@ -86,7 +89,8 @@ $fichero = utf8_encode($fichero);
 echo $fichero;
 */
 
-$timestamp = curl_getinfo($url, CURLINFO_FILETIME);
+$ch = curl_init($url);
+$timestamp = curl_getinfo($ch, CURLINFO_FILETIME);
 if ($timestamp != -1) { //otherwise unknown
     echo date("Y-m-d H:i:s", $timestamp); //etc
 } 
