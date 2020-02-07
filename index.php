@@ -1,31 +1,35 @@
 <?php
+	$to = "luismigueldelcorral@gmail.com";
+	$subject = "HTML email";
 
-function curl_get_contents($url)
-{
-   $ch = curl_init();
-   curl_setopt($ch, CURLOPT_URL, $url);
-   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-   curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
-   $html = curl_exec($ch);
-   $data = curl_exec($ch);
-   curl_close($ch);
-   return $data;
-}
+	$message = "
+	<html>
+	<head>
+	<title>HTML email</title>
+	</head>
+	<body>
+	<p>This email contains HTML Tags!</p>
+	<table>
+	<tr>
+	<th>Firstname</th>
+	<th>Lastname</th>
+	</tr>
+	<tr>
+	<td>John</td>
+	<td>Doe</td>
+	</tr>
+	</table>
+	</body>
+	</html>
+	";
 
-// Crear un flujo
-$opciones = array(
-  'http'=>array(
-    'method'=>"GET",
-    'header'=>"Accept-language: en\r\n" .
-              "Cookie: foo=bar\r\n"
-  )
-);
+	// Always set content-type when sending HTML email
+	$headers = "MIME-Version: 1.0" . "\r\n";
+	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-$contexto = stream_context_create($opciones);
+	// More headers
+	$headers .= 'From: <webmaster@example.com>' . "\r\n";
+	$headers .= 'Cc: myboss@example.com' . "\r\n";
 
-// Abre el fichero usando las cabeceras HTTP establecidas arriba
-$fichero = curl_get_contents('http://www.fedmadtm.com/', false, $contexto);
-
-echo $fichero;
-
+	mail($to,$subject,$message,$headers);
 ?>
