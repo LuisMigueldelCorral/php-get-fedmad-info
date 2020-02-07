@@ -1,35 +1,32 @@
+<h2>Test Mail</h2>
 <?php
-	$to = "luismigueldelcorral@gmail.com";
-	$subject = "HTML email";
 
-	$message = "
-	<html>
-	<head>
-	<title>HTML email</title>
-	</head>
-	<body>
-	<p>This email contains HTML Tags!</p>
-	<table>
-	<tr>
-	<th>Firstname</th>
-	<th>Lastname</th>
-	</tr>
-	<tr>
-	<td>John</td>
-	<td>Doe</td>
-	</tr>
-	</table>
-	</body>
-	</html>
-	";
+if (!isset($_POST["submit"]))
+  {
+  ?>
+  <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
+  From: <input type="text" name="from"><br>
+  Subject: <input type="text" name="subject"><br>
+  Message: <textarea rows="10" cols="40" name="message"></textarea><br>
+  <input type="submit" name="submit" value="Click To send mail">
+  </form>
+  <?php
+  }
 
-	// Always set content-type when sending HTML email
-	$headers = "MIME-Version: 1.0" . "\r\n";
-	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+else
 
-	// More headers
-	$headers .= 'From: <webmaster@example.com>' . "\r\n";
-	$headers .= 'Cc: myboss@example.com' . "\r\n";
+  {
 
-	mail($to,$subject,$message,$headers);
+  if (isset($_POST["from"]))
+    {
+    $from = $_POST["from"]; // sender
+    $subject = $_POST["subject"];
+    $message = $_POST["message"];
+
+    $message = wordwrap($message, 70);
+
+    mail("luismigueldelcorral@gmail.com",$subject,$message,"From: $from\n");
+    echo "Thank you for sending an email";
+    }
+  }
 ?>
