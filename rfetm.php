@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
   <META HTTP-EQUIV="Cache-Control" content="no-cache">
   <META HTTP-EQUIV="Pragma" content="no-cache">
-  <title>Noticias RFETM</title>
+  <title>CIRCULARES</title>
   <style type="text/css">
     
     .categoria{
@@ -47,7 +47,7 @@
 
 <?php
 
-$url = "http://www.rfetm.es/categoria.php?id_categoria=1#";
+$url = "http://www.rfetm.es/circulares/0";
 
 
 // ESTA PARTE FUNCIONA ES PARA NO SOBRECARGAR EL SERVIDOR
@@ -77,14 +77,14 @@ $contexto = stream_context_create($opciones);
 // Abre el fichero usando las cabeceras HTTP establecidas arriba
 
 $fichero = curl_get_contents($url, false, $contexto);
-$fichero = explode("<td colspan='3' valign='top' ALIGN='CENTER'>",$fichero)[1]; 
-$fichero = explode("<hr style='color:#d52e3f;height:2px'><p align='center'>",$fichero)[0]; 
-$fichero = explode('<td width="30%" valign="top" align="center" bgcolor="#eeeeee">',$fichero)[0]; 
+$fichero = explode("<ul class=\"list-group\">",$fichero)[1]; 
+$fichero = explode("</ul>",$fichero)[0]; 
+/*
 $fichero = str_replace("news/", "http://www.rfetm.es/news/", $fichero);
 $fichero = str_replace('href="', 'href="http://www.rfetm.es/news/', $fichero);
 $fichero = str_replace("href='", "href='http://www.rfetm.es/news/", $fichero);
-
-$fichero = '<h3 class="centrado">Noticias RFETM</h3>' . $fichero;
+*/
+$fichero = '<h3 class="centrado">CIRCULARES TEMPORADA 2019-2020</h3>' . $fichero;
 $fichero = utf8_encode($fichero);
 echo $fichero;
 /**/
