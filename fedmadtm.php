@@ -24,7 +24,7 @@ $opciones = array(
 $contexto = stream_context_create($opciones);
 
 // Abre el fichero usando las cabeceras HTTP establecidas arriba
-$fichero = curl_get_contents('http://www.fedmadtm.com/', false, $contexto);
+$fichero = curl_get_contents('http://www.fedmadtm.com', false, $contexto);
 
 echo $fichero;
 
