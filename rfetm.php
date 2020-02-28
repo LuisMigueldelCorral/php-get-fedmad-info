@@ -53,7 +53,7 @@ $fichero = str_replace("news/", "http://www.rfetm.es/news/", $fichero);
 $fichero = str_replace('href="', 'href="http://www.rfetm.es/news/', $fichero);
 $fichero = str_replace("href='", "href='http://www.rfetm.es/news/", $fichero);
 */
-$fichero = '<h3 class="centrado">CIRCULARES TEMPORADA 2019-2020</h3>' . $fichero;
+$fichero = '\n\n<h3 class="centrado">CIRCULARES TEMPORADA 2019-2020</h3>\n\n<ul class="list-group">' . $fichero . "\n\n</ul>";
 $fichero = utf8_encode($fichero);
 echo $fichero;
 /**/
