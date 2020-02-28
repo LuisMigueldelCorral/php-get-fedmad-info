@@ -49,7 +49,7 @@
 
 $url = "http://www.rfetm.es/categoria.php?id_categoria=1#";
 
-/*
+
 // ESTA PARTE FUNCIONA ES PARA NO SOBRECARGAR EL SERVIDOR
 function curl_get_contents($url)
 {
@@ -87,7 +87,7 @@ $fichero = str_replace("href='", "href='http://www.rfetm.es/news/", $fichero);
 $fichero = '<h3 class="centrado">Noticias RFETM</h3>' . $fichero;
 $fichero = utf8_encode($fichero);
 echo $fichero;
-*/
+/**/
 
 $ch = curl_init($url);
 $timestamp = curl_getinfo($ch, CURLINFO_FILETIME);
