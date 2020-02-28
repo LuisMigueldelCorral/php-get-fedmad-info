@@ -2,45 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Language" content="es">
-  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <META HTTP-EQUIV="Cache-Control" content="no-cache">
   <META HTTP-EQUIV="Pragma" content="no-cache">
   <title>CIRCULARES</title>
-  <style type="text/css">
-    
-    .categoria{
-      color: #069;
-    }
-    * {
-        font-size: initial;
-    }
-    hr{
-      color: #069 !important;
-      background-color: #069 !important;
-      height: 5px !important;
-    }
-    h3{
-      padding:  20px;
-      border-bottom: 5px solid #069;
-    }
-    a{
-        color: #069;
-    }
-    .centrado{
-      text-align: center;
-      margin: 0 auto; 
-    }
+  <!-- Styles -->
+  <link href="http://www.rfetm.es/css/app.css" rel="stylesheet">
+  <link href="http://www.rfetm.es/css/estilo.css" rel="stylesheet">    
 
-    html{
-      background-color: #dbe3e8;
-    }
-    img{
-      margin: 20px;
-      border: 2px double #eee;
-      padding: 5px;      
-    }
-
-  </style>
 </head>
 
 <body>
